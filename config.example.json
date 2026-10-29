@@ -1,0 +1,24 @@
+{
+  "app_name": "Планировщик работы",
+  "telegram_bot_token": "",
+  "telegram_chat_id": 0,
+  "check_interval_seconds": 60,
+  "digest_time": "09:00",
+  "remind_minutes_before_deadline": 60,
+  "scan_lookback_days": 7,
+  "desktop_plan_path": "",
+  "desktop_digest_path": "",
+  "desktop_last_update": true,
+  "mailboxes": [],
+  "folders": {
+    "projects_base": "C:\\path\\to\\projects"
+  },
+  "ai": {
+    "enabled": false,
+    "provider": "deepseek",
+    "api_key": "",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat"
+  },
+  "write_desktop_copy": false
+}

@@ -1,0 +1,39 @@
+# секреты и локальные настройки (пароль почты, api_key)
+config.json
+
+# локальные данные
+notion.db
+notion.db-shm
+notion.db-wal
+tasks.json
+last_email.json
+calendar.ics
+mail_cache/
+projects/
+_выходные/
+_server.pid
+=
+
+# мусор
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# локальные тестовые скрипты с паролями
+mail_login_test.py
+webmail_login_test.py
+
+# Другие локальные секреты, состояния и диагностические выгрузки
+.env
+.env.*
+!.env.example
+state.json
+*.db
+*.db-shm
+*.db-wal
+*.log
+tb_dump*.py
+tb_extract.py
+tb_verify.py

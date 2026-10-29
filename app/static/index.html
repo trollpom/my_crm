@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Планировщик работы</title>
+  <link rel="stylesheet" href="/static/styles.css?v=20261019i">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M13 3v6.5l2.6-1.9L18.2 9.5V3"/></svg></span>
+      <span>Планировщик работы</span>
+    </div>
+    <nav id="nav">
+      <a href="#/overview" data-view="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1H10v-5.5h4V21h3.5a1 1 0 0 0 1-1V9.5"/></svg> Обзор</a>
+      <a href="#/tasks" data-view="tasks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.6-5"/></svg> Задачи и списки</a>
+      <a href="#/kanban" data-view="kanban"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="4.6" height="16" rx="1.4"/><rect x="9.7" y="4" width="4.6" height="11" rx="1.4"/><rect x="15.9" y="4" width="4.6" height="14" rx="1.4"/></svg> Канбан-доска</a>
+      <a href="#/calendar" data-view="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8.5 3.5V6.5M15.5 3.5V6.5"/></svg> Календарь</a>
+      <a href="#/projects" data-view="projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2.2 2.6h6.8a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg> Проекты</a>
+      <a href="#/mail" data-view="mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 8 7.5 5.2L19.5 8"/></svg> Почта → задачи</a>
+      <a href="#/ai" data-view="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-9.5L6 20.5V16.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="11" r="1" fill="currentColor" stroke="none"/></svg> ИИ-помощник</a>
+      <a href="#/charts" data-view="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20.5h16.5"/><path d="M6.5 20.5v-6.5"/><path d="M11.5 20.5V8"/><path d="M16.5 20.5v-9.5"/></svg> Графики и Гантт</a>
+      <a href="#/notes" data-view="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7.5L19 8v11.5a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1z"/><path d="M14 3.5V8.5H19M9 12.5h6M9 16h4.5"/></svg> Заметки</a>
+    </nav>
+    <div class="bell-wrap">
+      <button class="bell" id="bell" title="Уведомления и напоминания">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5a6 6 0 1 1 12 0c0 4.5 2 5.5 2 5.5H4s2-1 2-5.5"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+        <span class="bell-badge hidden" id="bell-badge">0</span>
+      </button>
+      <div class="bell-panel hidden" id="bell-panel"></div>
+    </div>
+    <div class="sidebar-foot">
+      <div class="mailbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 8 7.5 5.2L19.5 8"/></svg> Локальная почта</div>
+      <div class="hint">Локальный планировщик работы · данные в notion.db</div>
+    </div>
+  </aside>
+
+  <main id="view" class="content"></main>
+
+  <div id="modal" class="modal hidden"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/static/app.js?v=20261019i"></script>
+</body>
+</html>
